@@ -13,6 +13,8 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class PacketSyncCosArmor extends NetworkPacket
 {
@@ -35,6 +37,7 @@ public class PacketSyncCosArmor extends NetworkPacket
     }
 
     @Override
+	@SideOnly(Side.CLIENT)
     public void handlePacketClient()
     {
         Minecraft mc = FMLClientHandler.instance().getClient();
